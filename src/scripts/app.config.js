@@ -21,6 +21,7 @@
             // console.log("locationChangeStart",event,$window.sessionStorage.getItem('token'));
             if ($location.path() != '/login' && !$cookieStore.get('SessionId')) {
                 // console.log("go to login", $location.path(), $window.sessionStorage.getItem('token'));
+                // alert("Please login again your current session has expired.");
                 // $location.path('/login');
             
             }

@@ -8,7 +8,12 @@
  
 (function(){
   angular.module('adminApp')
-  .controller('LoginCtrl',['$scope','Notification', function($scope,Notification) {
+  .controller('LoginCtrl',['$scope','Notification','LoginService','$state', function($scope,Notification,LoginService,$state) {
     console.log("came here LoginCtrl");
+    
+    $scope.doLogin = function(){
+      LoginService.saveTokenToLocalStorage('askdhaskdjakdjasdhk');
+      $state.go('dashboard.home');
+    };
   }]);
 })();

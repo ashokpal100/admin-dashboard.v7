@@ -65,7 +65,7 @@ gulp.task('minify', function() {
 
 gulp.task('browser-sync', function() {
   var options = {
-        port: 3000,
+        port: 8000,
         host: '*',
         logger: 'dev',
         ghostMode: {

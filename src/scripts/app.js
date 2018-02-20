@@ -17,5 +17,6 @@ angular.module('adminApp', [
     'ui-notification',
     'ngCookies',
     'ngecharts',
-    'ngCookies'
+    'LocalStorageModule',
+    'duScroll'
 ]);

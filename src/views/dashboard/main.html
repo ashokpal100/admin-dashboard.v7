@@ -7,68 +7,31 @@
                     <li class="menu-head">
                         <h2>LOGO HERE</h2>
                     </li>
-                    <div class="menu font-16" id="menuItem">
-                        <li ui-sref-active="active" style="border-top: 1px solid #e7e7e7;">
-                            <a ui-sref=".dashboard">
-                                <i class="fa fa-star-o"></i> &nbsp;
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <a ui-sref=".monitoring">
-                                <i class="fa fa-star-o"></i> &nbsp; 
-                                <span>Monitoring</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <a ui-sref=".trends">
-                                <i class="fa fa-star-o"></i> &nbsp; 
-                                <span>Trends</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <a ui-sref=".alerts">
-                                <i class="fa fa-star-o"></i> &nbsp; 
-                                <span>Alerts</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <a ui-sref=".management">
-                                <i class="fa fa-star-o"></i> &nbsp; 
-                                <span>Management</span>
-                            </a>
-                        </li>
-            
-                    </div>
-                    
-                    <div class="menu font-16 menuHide" id="menuItemIcon">
-                        <li style="border-top: 1px solid #e7e7e7;margin-top:10px;" class="right">
-                            <a ui-sref=".dashboard">
-                                <i class="fa fa-star-o"></i>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active" class="right">
-                            <a ui-sref=".monitoring">
-                                <i class="fa fa-star-o"></i>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active" class="right">
-                            <a ui-sref=".trends">
-                                <i class="fa fa-star-o"></i>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active" class="right">
-                            <a ui-sref=".alerts">
-                                <i class="fa fa-star-o"></i>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active" class="right">
-                            <a ui-sref=".management">
-                                <i class="fa fa-star-o"></i>
-                            </a>
-                        </li>
-            
-                    </div>
+                    <li id="accordion" class="behclick-panel">
+    					<div class="panel-heading " >
+    						<div class="panel-body" >
+    							<a data-toggle="collapse" href="#collapse0">
+    							    <span>Dashboard</span>
+    								<i class="indicator fa fa-caret-down" aria-hidden="true"></i>
+    							</a>
+    					     </div>
+    					</div>
+    					<div id="collapse0" class="panel-collapse collapse in" style="background-color:black">
+    						<ul class="list-group">
+    							<li class="list-group-item">
+    								item 1
+    							</li>
+    							<li class="list-group-item">
+    								item 2
+    							</li>
+    							<li class="list-group-item">
+    								item 3
+    							</li>
+    							
+    						</ul>
+    					</div>
+                    </li>
+                   
                     
                 </ul>
     	    </div>

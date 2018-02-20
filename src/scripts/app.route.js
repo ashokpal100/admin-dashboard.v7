@@ -3,7 +3,7 @@
   // Angular App Routers
     angular.module('adminApp').config(['$ocLazyLoadProvider','$stateProvider','$urlRouterProvider','$locationProvider',function($ocLazyLoadProvider,$stateProvider, $urlRouterProvider,$locationProvider) {
         $locationProvider.html5Mode({enabled: true});
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/dashboard');
     
         $stateProvider
             .state('login', {
@@ -27,6 +27,12 @@
                 templateUrl: 'views/dashboard/main.html',
                 controller: 'MainCtrl',
                 resolve: {
+                  protected_route: ['LoginService','$location','$state',function(LoginService,$location,$state){
+                      if(!LoginService.getTokenFromLocalStorage()){
+                          $state.go('login');
+                      }
+                      
+                  }],
                   loadMyFiles:['$ocLazyLoad',function($ocLazyLoad) {
                     return $ocLazyLoad.load({
                       name:'adminApp',

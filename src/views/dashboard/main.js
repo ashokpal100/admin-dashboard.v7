@@ -28,13 +28,16 @@
     }else{
       console.log("nabvar it is not collapse")
     }
-    // $('.panel-collapse').on('show.bs.collapse', function () {
-    //   $(this).siblings('.panel-heading').addClass('active');
-    // });
-  
-    // $('.panel-collapse').on('hide.bs.collapse', function () {
-    //   $(this).siblings('.panel-heading').removeClass('active');
-    // });
+    
+    function toggleChevron(e) {
+  		$(e.target)
+  				.prev('.panel-heading')
+  				.find("i.indicator")
+  				.toggleClass('fa-caret-down fa-caret-left');
+  	}
+  	$('#accordion').on('hidden.bs.collapse', toggleChevron);
+  	$('#accordion').on('shown.bs.collapse', toggleChevron);
+	
   
   }]);
 })();

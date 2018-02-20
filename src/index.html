@@ -7,7 +7,9 @@
     <base href="/">
     <meta name="viewport" content="width=device-width , initial-scale=1" />
     <!--<meta http-equiv="Content-Security-Policy" content=" default-src 'self' ws://54.169.209.175:5000">-->
-    <!--build:css css/app.min.css-->
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href = "https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+    <!--build:css css/main.bundle.min.css-->
     <link rel="stylesheet" href="/css/loader.css">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
@@ -21,7 +23,7 @@
     <body data-ng-app="adminApp" data-ng-controller="AppCtrl">
         <div id="loader-container"></div>
         <div ui-view></div>
-        <!-- build:js js/vendor.min.js -->
+        <!-- build:js js/vendor.bundle.min.js -->
         <!-- bower:js -->
         <script src="/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="/bower_components/angular/angular.min.js"></script>
@@ -38,15 +40,21 @@
         <script src="/bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
         <script scr="/bower_components/angular-animate/angular-animate.js"></script>
         <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-        <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+        <script src="/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+        <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+        <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-        <!--build:js js/app.min.js -->
+        <!--build:js js/main.bundle.min.js -->
+        <script src="scripts/globalConfig.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/scripts.js"></script>
         <script src="scripts/app.ctrl.js"></script>
         <script src="scripts/app.route.js"></script>
         <script src="scripts/app.config.js"></script>
+        <script src="scripts/app.directives.js"></script>
+        <script src="views/login/login-service.js"></script>
         <!-- endbuild -->
     </body>
 </html>
