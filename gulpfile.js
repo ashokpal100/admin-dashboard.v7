@@ -50,15 +50,18 @@ gulp.task('minify', function() {
     .pipe($.uglify({compress: {drop_console: true}}))
     .pipe(gulp.dest('dist/views/'));
     
-  var optss = {comments:true,spare:true};
   gulp.src('dist/views/**/**/**/**/*.html')
-    .pipe(minifyHTML(optss))
+    .pipe(minifyHTML(opts))
     .pipe(gulp.dest('dist/views/'))
     
-  return gulp.src('dist/views/**/**/**/**/*.css')
+  gulp.src('dist/views/**/**/**/**/*.css')
     .pipe($.useref())
     .pipe($.if('*.css', $.cssnano()))
     .pipe(gulp.dest('dist/views/'))
+    
+  return gulp.src('dist/index.html')
+    .pipe(minifyHTML(opts))
+    .pipe(gulp.dest('dist'))
     
 });
 
@@ -127,8 +130,8 @@ gulp.task('clean', function() {
 })
 
 // clear cache
-gulp.task('cache:clear', function (callback) {
-    return $.cache.clearAll(callback)
+gulp.task('cache:clear', function () {
+    return $.cache.clearAll()
 })
 
 function log(msg) {
@@ -144,26 +147,22 @@ function log(msg) {
 }
 
 
-gulp.task('dev', function (callback) {
+gulp.task('dev', function () {
     runSequence(
-        'watch',
-    callback);
+        'watch');
 });
 
-gulp.task('default', function (callback) {
+gulp.task('default', function () {
     runSequence(
-        'watch',
-    callback);
+        'watch');
 });
 
 
-gulp.task('prod', function(callback){
+gulp.task('prod', function(){
     runSequence(
         'clean',
         'cache:clear',
         ['inject','copy','minify'],
-        'nodemon',
-        callback
+        'nodemon'
     );
 });
-
